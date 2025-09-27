@@ -1,3 +1,5 @@
+import { WeatherLayout } from './components/weather-layout/WeatherLayout';
+
 export function Weather() {
-    return <div></div>;
+    return <WeatherLayout />;
 }

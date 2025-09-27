@@ -1,5 +1,7 @@
+import { Weather } from './features/weather/Weather';
+
 function App() {
-    return <div></div>;
+    return <Weather />;
 }
 
 export default App;
