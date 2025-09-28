@@ -11,9 +11,9 @@ import { Option } from './option/Option';
 function Options(props: OptionsProps) {
     const { optionsVariant, handleOptionChange } = useOptionsHook(props.onOptionChange);
 
-    const options = props.options.map((option) => {
+    const options = props.options.map((option, index) => {
         return (
-            <div className="p-[var(--spacing-8)]">
+            <div key={index} className="p-[var(--spacing-8)]">
                 <Option
                     key={option.id}
                     id={option.id}
@@ -31,7 +31,7 @@ function Options(props: OptionsProps) {
         if (!props.preSelectedOptions) return;
 
         return (
-            <div className="px-[var(--spacing-8)]">
+            <div key={i} className="px-[var(--spacing-8)]">
                 <div>
                     <span className="font-(weight:--fw-bold) text-(length:--fs-12) text-[var(--neutral-300)] ml-[var(--spacing-6)]">
                         {props.preSelectedOptions[key].divider}

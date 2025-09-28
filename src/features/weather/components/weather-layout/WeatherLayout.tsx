@@ -2,13 +2,22 @@
 import { Header } from '../header/Header';
 import { SubHeader } from '../sub-header/SubHeader';
 import { WeatherContent } from '../weather-content/WeatherContent';
+import { Search } from '../Search.tsx';
 
-export function WeatherLayout() {
+// Types
+import { WeatherForecastDataType } from '../../types/WeatherTypes.ts';
+
+interface WeatherLayoutProps {
+    weatherForecast: WeatherForecastDataType | undefined;
+}
+
+export function WeatherLayout({ weatherForecast }: WeatherLayoutProps) {
     return (
-        <div className="grid grid-rows-[45px_60px_1fr] gap-[var(--spacing-64)] h-screen px-[var(--spacing-112)] pt-[var(--spacing-48)] pb-[var(--spacing-80)]">
+        <div className="grid grid-rows-[45px_60px_45px_1fr] gap-[var(--spacing-64)] h-screen px-[var(--spacing-112)] pt-[var(--spacing-48)] pb-[var(--spacing-80)]">
             <Header />
             <SubHeader />
-            <WeatherContent />
+            <Search />
+            <WeatherContent weatherForecast={weatherForecast} />
         </div>
     );
 }
