@@ -10,6 +10,7 @@ export interface Option {
     value: string;
     icon?: string;
     preSelected?: boolean;
+    system?: string;
 }
 
 export interface PreSelectedOption {
