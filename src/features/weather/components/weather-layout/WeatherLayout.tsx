@@ -13,7 +13,7 @@ interface WeatherLayoutProps {
 
 export function WeatherLayout({ weatherForecast }: WeatherLayoutProps) {
     return (
-        <div className="grid grid-rows-[45px_60px_45px_1fr] gap-[var(--spacing-64)] h-screen px-[var(--spacing-112)] pt-[var(--spacing-48)] pb-[var(--spacing-80)]">
+        <div className="grid grid-rows-[45px_60px_45px_1fr] gap-[var(--spacing-64)] h-screen px-[var(--spacing-112)] max-[550px]:px-[var(--spacing-16)] pt-[var(--spacing-48)] pb-[var(--spacing-80)]">
             <Header />
             <SubHeader />
             <Search />

@@ -10,7 +10,7 @@ export function Header() {
         <div className="flex items-center justify-between text-[var(--neutral-0)] text-(length:--fs-20) font">
             <div className="flex items-center gap-[var(--spacing-16)]">
                 <Svg width="40" height="40" path={logoIcon} fill="var(--orange)" />
-                <span>Weather Now</span>
+                <span className="max-[550px]:text-(length:--fs-16)">Weather Now</span>
             </div>
             <UnitsSwitcher />
         </div>

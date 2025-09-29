@@ -1,18 +1,27 @@
 // Types
 import { WeatherForecastDataType } from '../../../types/WeatherTypes.ts';
-import { useDetermineLocationHook } from '../../../useDetermineLocationHook.ts';
 
 // Images
 import bgHeroImage from '../../../../../images/desktop-hero-bg.svg';
+
+// Date utils
 import { getCurrentDate } from '../../../../../common/DateUtils.ts';
+
+// Hooks
+import { useDetermineLocationHook } from '../../../useDetermineLocationHook.ts';
+import { useGetUserCoordinates } from '../../../useGetUserCoordinates.ts';
 
 interface CityWeatherOverviewProps {
     weatherForecast: WeatherForecastDataType | undefined;
 }
 
 export function CityWeatherOverview({ weatherForecast }: CityWeatherOverviewProps) {
-    const { city } = useDetermineLocationHook(weatherForecast?.latitude ?? 0, weatherForecast?.longitude ?? 0);
+    const { coordinates } = useGetUserCoordinates();
+    const { location } = useDetermineLocationHook(coordinates?.latitude, coordinates?.longitude);
+
     const date = getCurrentDate();
+
+    console.log(weatherForecast);
 
     return (
         <div className="relative">
@@ -21,12 +30,12 @@ export function CityWeatherOverview({ weatherForecast }: CityWeatherOverviewProp
                 src={bgHeroImage}
                 alt="bg-hero-desktop-image"
             />
-            <div className="absolute flex justify-between items-center top-0 bottom-0 left-0 right-0 p-[var(--spacing-24)]">
+            <div className="absolute flex justify-between items-center top-0 bottom-0 left-0 right-0 p-[var(--spacing-24)] max-[550px]:text-center max-[550px]:justify-center">
                 <div>
-                    <h1 className="text-(length:--fs-52) font-(weight:--fw-semi-bold) text-[var(--neutral-0)]">
-                        {city}
+                    <h1 className="text-(length:--fs-32) font-(weight:--fw-semi-bold) text-[var(--neutral-0)] max-[550px]:text-(length:--fs-20)">
+                        {`${location?.address.city_district}, ${location?.address.country}`}
                     </h1>
-                    <span className="text-[var(--neutral-0)]">{date}</span>
+                    <span className="text-[var(--neutral-0)] max-[550px]:text-(length:--fs-14)">{date}</span>
                 </div>
                 <div></div>
             </div>
