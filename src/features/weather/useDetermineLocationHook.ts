@@ -17,7 +17,9 @@ export function useDetermineLocationHook() {
     const [location, setLocation] = useState<Location | null>(null);
 
     useEffect(() => {
-        if (!navigator.geolocation) return;
+        if (!navigator.geolocation) {
+            console.error('Geolocation is not supported by this browser.');
+        }
 
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -32,19 +34,19 @@ export function useDetermineLocationHook() {
 
                         setLocation(locationData);
                     } catch (error) {
-                        console.error('Reverse Geocode Failed:', error);
+                        console.error('Reverse geocoding failed:', error);
                     }
                 };
 
                 void fetchCity();
             },
             (error) => {
-                console.error(error);
+                console.error(error.message);
             }
         );
-    }, [])
+    }, []);
 
     return {
-        location
-    }
+        location,
+    };
 }
