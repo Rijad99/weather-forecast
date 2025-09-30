@@ -19,6 +19,8 @@ export function CityWeatherOverview({ weatherForecast }: CityWeatherOverviewProp
 
     const date = getCurrentDate();
 
+    const city = location?.address.city_district ? location.address.city_district : location?.address.village;
+
     console.log(weatherForecast);
 
     return (
@@ -31,7 +33,7 @@ export function CityWeatherOverview({ weatherForecast }: CityWeatherOverviewProp
             <div className="absolute flex justify-between items-center top-0 bottom-0 left-0 right-0 p-[var(--spacing-24)] max-[550px]:text-center max-[550px]:justify-center">
                 <div>
                     <h1 className="text-(length:--fs-32) font-(weight:--fw-semi-bold) text-[var(--neutral-0)] max-[550px]:text-(length:--fs-20)">
-                        {`${location?.address.city_district}, ${location?.address.country}`}
+                        {`${city}, ${location?.address.country}`}
                     </h1>
                     <span className="text-[var(--neutral-0)] max-[550px]:text-(length:--fs-14)">{date}</span>
                 </div>

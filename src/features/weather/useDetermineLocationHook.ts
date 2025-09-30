@@ -9,6 +9,7 @@ interface Location {
         postcode: string;
         state: string;
         state_district: string;
+        village: string;
     };
 }
 
