@@ -12,29 +12,38 @@ interface Location {
     };
 }
 
-export function useDetermineLocationHook(latitude: number | undefined, longitude: number | undefined) {
+export function useDetermineLocationHook() {
     const [location, setLocation] = useState<Location | null>(null);
 
     useEffect(() => {
-        if (!latitude || !longitude) return;
+        if (!navigator.geolocation) return;
 
-        const fetchCity = async () => {
-            try {
-                const res = await fetch(
-                    `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
-                );
-                const locationData = await res.json();
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                if (!position.coords.latitude || !position.coords.longitude) return;
 
-                setLocation(locationData);
-            } catch (error) {
-                console.error('Reverse Geocode Failed:', error);
+                const fetchCity = async () => {
+                    try {
+                        const res = await fetch(
+                            `https://nominatim.openstreetmap.org/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`
+                        );
+                        const locationData = await res.json();
+
+                        setLocation(locationData);
+                    } catch (error) {
+                        console.error('Reverse Geocode Failed:', error);
+                    }
+                };
+
+                void fetchCity();
+            },
+            (error) => {
+                console.error(error);
             }
-        };
-
-        void fetchCity();
-    }, [latitude, longitude]);
+        );
+    }, [])
 
     return {
-        location,
-    };
+        location
+    }
 }

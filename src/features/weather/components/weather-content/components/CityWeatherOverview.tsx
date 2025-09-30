@@ -9,15 +9,13 @@ import { getCurrentDate } from '../../../../../common/DateUtils.ts';
 
 // Hooks
 import { useDetermineLocationHook } from '../../../useDetermineLocationHook.ts';
-import { useGetUserCoordinates } from '../../../useGetUserCoordinates.ts';
 
 interface CityWeatherOverviewProps {
     weatherForecast: WeatherForecastDataType | undefined;
 }
 
 export function CityWeatherOverview({ weatherForecast }: CityWeatherOverviewProps) {
-    const { coordinates } = useGetUserCoordinates();
-    const { location } = useDetermineLocationHook(coordinates?.latitude, coordinates?.longitude);
+    const { location } = useDetermineLocationHook();
 
     const date = getCurrentDate();
 
