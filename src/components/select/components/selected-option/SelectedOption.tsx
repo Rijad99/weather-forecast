@@ -15,6 +15,7 @@ function SelectedOption({
     selectedOption,
     isSelectOpen,
     placeholder,
+    selectIcon,
     preSelectedOptions,
     onSelectOpen,
 }: SelectedOptionProps) {
@@ -22,7 +23,8 @@ function SelectedOption({
         onSelectOpen();
     }, [onSelectOpen]);
 
-    const renderIcon = selectedOption?.icon && <img src={selectedOption.icon} alt={selectedOption.icon} />;
+    const renderSelectIcon = selectIcon && <Svg path={selectIcon} width="16" height="16" fill="var(--neutral-0)" />;
+    const renderOptionIcon = selectedOption?.icon && <img src={selectedOption.icon} alt={selectedOption.icon} />;
     const renderValue = preSelectedOptions ? placeholder : selectedOption?.value;
 
     return (
@@ -31,9 +33,12 @@ function SelectedOption({
             onClick={handleSelectOpen}
         >
             <div className="w-full flex items-center justify-between whitespace-nowrap">
-                <div className="flex items-center ml-[var(--spacing-6)] text-(length:--fs-14) font-(weight:--fw-medium)">
-                    {renderIcon}
-                    {renderValue}
+                <div className="flex items-center gap-[var(--spacing-4)]">
+                    {renderSelectIcon}
+                    <div className="flex items-center ml-[var(--spacing-6)] text-(length:--fs-14) font-(weight:--fw-medium)">
+                        {renderOptionIcon}
+                        {renderValue}
+                    </div>
                 </div>
                 <Svg
                     path={arrowIcon}

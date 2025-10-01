@@ -12,6 +12,7 @@ function Select({
     selectedOption,
     placeholder,
     options,
+    selectIcon,
     preSelectedOptions,
     additionalClasses,
     onOptionChange,
@@ -23,6 +24,7 @@ function Select({
             <SelectedOption
                 isSelectOpen={isSelectOpen}
                 selectedOption={selectedOption}
+                selectIcon={selectIcon}
                 preSelectedOptions={preSelectedOptions}
                 placeholder={placeholder}
                 onSelectOpen={handleSelectOpen}
