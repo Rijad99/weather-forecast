@@ -1,6 +1,9 @@
 // React
 import { useEffect, useState } from 'react';
 
+// Utils
+import { getCurrentLocation } from '../../common/user-location.ts';
+
 interface Location {
     address: {
         city_district: string;
@@ -17,33 +20,22 @@ export function useDetermineLocationHook() {
     const [location, setLocation] = useState<Location | null>(null);
 
     useEffect(() => {
-        if (!navigator.geolocation) {
-            console.error('Geolocation is not supported by this browser.');
-        }
+        const fetchCity = async () => {
+            const { latitude, longitude } = await getCurrentLocation();
 
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                if (!position.coords.latitude || !position.coords.longitude) return;
+            try {
+                const res = await fetch(
+                    `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+                );
+                const locationData = await res.json();
 
-                const fetchCity = async () => {
-                    try {
-                        const res = await fetch(
-                            `https://nominatim.openstreetmap.org/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`
-                        );
-                        const locationData = await res.json();
-
-                        setLocation(locationData);
-                    } catch (error) {
-                        console.error('Reverse geocoding failed:', error);
-                    }
-                };
-
-                void fetchCity();
-            },
-            (error) => {
-                console.error(error.message);
+                setLocation(locationData);
+            } catch (error) {
+                console.error('Reverse geocoding failed:', error);
             }
-        );
+        };
+
+        void fetchCity();
     }, []);
 
     return {

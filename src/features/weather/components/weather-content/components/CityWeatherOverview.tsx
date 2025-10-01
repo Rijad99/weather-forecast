@@ -5,7 +5,7 @@ import { WeatherForecastDataType } from '../../../types/WeatherTypes.ts';
 import bgHeroImage from '../../../../../images/desktop-hero-bg.svg';
 
 // Date utils
-import { getCurrentDate } from '../../../../../common/DateUtils.ts';
+import { getCurrentDate } from '../../../../../common/date-utils.ts';
 
 // Hooks
 import { useDetermineLocationHook } from '../../../useDetermineLocationHook.ts';
