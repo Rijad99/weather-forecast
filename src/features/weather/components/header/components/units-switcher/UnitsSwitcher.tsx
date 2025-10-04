@@ -17,7 +17,7 @@ export function UnitsSwitcher() {
             selectIcon={gearIcon}
             preSelectedOptions={preSelectedUnits}
             selectedOption={currentUnit}
-            additionalClasses="w-[200px]"
+            additionalClasses="w-[200px] z-[20]"
             onOptionChange={handleUnitChange}
         />
     );

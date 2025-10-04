@@ -39,19 +39,18 @@ function CityWeatherOverviewHeroImage() {
             src={bgHeroImage}
             alt="bg-hero-desktop-image"
         />
-    )
+    );
 }
 
 interface CityWeatherOverviewContentProps {
-    city: string | undefined,
-    country: string | undefined,
-    date: string
+    city: string | undefined;
+    country: string | undefined;
+    date: string;
 }
 
 function CityWeatherOverviewContent({ city, country, date }: CityWeatherOverviewContentProps) {
     return (
-        <div
-            className="absolute flex justify-between items-center top-0 bottom-0 left-0 right-0 p-[var(--spacing-24)] max-[550px]:text-center max-[550px]:justify-center">
+        <div className="absolute flex justify-between items-center top-0 bottom-0 left-0 right-0 p-[var(--spacing-24)] max-[550px]:text-center max-[550px]:justify-center">
             <div>
                 <h1 className="text-(length:--fs-32) font-(weight:--fw-semi-bold) text-[var(--neutral-0)] max-[550px]:text-(length:--fs-20)">
                     {`${city}, ${country}`}
@@ -59,5 +58,5 @@ function CityWeatherOverviewContent({ city, country, date }: CityWeatherOverview
                 <span className="text-[var(--neutral-0)] max-[550px]:text-(length:--fs-14)">{date}</span>
             </div>
         </div>
-    )
+    );
 }

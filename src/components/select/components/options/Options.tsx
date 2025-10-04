@@ -46,7 +46,7 @@ function Options(props: OptionsProps) {
                             />
                         );
                     })}
-                    {i !== options.length ? (
+                    {i !== options.length + 1 ? (
                         <div className="w-[95%] h-[1px] bg-[var(--neutral-600)] m-auto"></div>
                     ) : null}
                 </div>
@@ -58,7 +58,7 @@ function Options(props: OptionsProps) {
 
     return (
         <motion.ul
-            className="w-full absolute radius-[--radius-8] p-[--spacing-4] bg-(--neutral-800) rounded-(--radius-8)"
+            className="w-full absolute radius-[--radius-8] p-[--spacing-4] bg-(--neutral-800) rounded-(--radius-8) border-[1px] border-[var(--neutral-600)]"
             initial={{
                 opacity: 0,
                 transform: 'translateY(-20px)',

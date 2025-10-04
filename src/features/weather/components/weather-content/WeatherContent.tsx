@@ -5,7 +5,7 @@ import { WeatherForecastDataType } from '../../types/WeatherTypes.ts';
 import { CityWeatherOverview } from './components/CityWeatherOverview.tsx';
 import { CityBaseWeatherInformation } from './components/CityBaseWeatherInformation.tsx';
 import { CityDailyForecast } from './components/CityDailyForecast.tsx';
-import { CityHourlyForecast } from './components/CityHourlyForecast.tsx';
+import { CityHourlyForecast } from './components/city-hourly-forecast/CityHourlyForecast.tsx';
 
 interface WeatherContentProps {
     weatherForecast: WeatherForecastDataType | undefined;

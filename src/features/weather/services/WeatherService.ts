@@ -7,7 +7,9 @@ class WeatherServiceImpl {
     async getWeatherData() {
         const { latitude, longitude } = await getCurrentLocation();
 
-        const response = await fetch(`${weatherForecastApiUrl}?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`);
+        const response = await fetch(
+            `${weatherForecastApiUrl}?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`
+        );
 
         return await response.json();
     }

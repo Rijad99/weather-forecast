@@ -25,17 +25,17 @@ function SelectedOption({
 
     const renderSelectIcon = selectIcon && <Svg path={selectIcon} width="16" height="16" fill="var(--neutral-0)" />;
     const renderOptionIcon = selectedOption?.icon && <img src={selectedOption.icon} alt={selectedOption.icon} />;
-    const renderValue = preSelectedOptions ? placeholder : selectedOption?.value;
+    const renderValue = preSelectedOptions || !selectedOption ? placeholder : selectedOption?.value;
 
     return (
         <div
-            className="flex items-center h-[50px] pl-[var(--spacing-8)] pr-[var(--spacing-16)] rounded-[var(--radius-8)] cursor-pointer"
+            className="flex items-center h-[50px] pl-[var(--spacing-8)] pr-[var(--spacing-16)] rounded-[var(--radius-8)] cursor-pointer border-[1px] border-[var(--neutral-600)]"
             onClick={handleSelectOpen}
         >
             <div className="w-full flex items-center justify-between whitespace-nowrap">
                 <div className="flex items-center gap-[var(--spacing-4)]">
                     {renderSelectIcon}
-                    <div className="flex items-center ml-[var(--spacing-6)] text-(length:--fs-14) font-(weight:--fw-medium)">
+                    <div className="flex items-center text-[var(--neutral-0)] ml-[var(--spacing-6)] text-(length:--fs-14) font-(weight:--fw-medium) pr-[var(--spacing-10)]">
                         {renderOptionIcon}
                         {renderValue}
                     </div>
