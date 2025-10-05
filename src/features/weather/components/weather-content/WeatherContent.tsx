@@ -14,7 +14,7 @@ interface WeatherContentProps {
 export function WeatherContent({ weatherForecast }: WeatherContentProps) {
     return (
         <div className="grid grid-cols-1 min-[1480px]:grid-cols-[2fr_1fr] gap-[var(--spacing-24)] pb-[var(--spacing-22)]">
-            <div className="grid grid-rows-[auto_auto_auto] min-[1300px]:grid-rows-[280px_100px_calc(100vh-845px)] gap-[var(--spacing-24)] max-[550px]:gap-[var(--spacing-48)]">
+            <div className="grid grid-rows-[auto_auto_auto] min-[1300px]:grid-rows-[280px_100px_calc(100vh-865px)] gap-[var(--spacing-24)] max-[550px]:gap-[var(--spacing-48)]">
                 <CityWeatherOverview weatherForecast={weatherForecast} />
                 <CityBaseWeatherInformation />
                 <CityDailyForecast />
