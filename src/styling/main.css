@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--neutral-900);
+    background: var(--neutral-700);
     border-radius: 10px;
 }
 
