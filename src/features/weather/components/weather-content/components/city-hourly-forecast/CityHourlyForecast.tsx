@@ -14,7 +14,7 @@ export function CityHourlyForecast() {
                 </h1>
                 <HourlyForecastByDaySelect />
             </div>
-            <div className="flex flex-col gap-[var(--spacing-16)] max-h-[calc(100vh-530px)] overflow-x-hidden overflow-y-auto pr-[var(--spacing-24)]">
+            <div className="flex flex-col gap-[var(--spacing-16)] max-h-[calc(100vh-535px)] overflow-x-hidden overflow-y-auto pr-[var(--spacing-24)]">
                 <HourlyForecastCard time="3 PM" temperature={20} weatherIcon={clearSunnySvgIcon} />
                 <HourlyForecastCard time="3 PM" temperature={20} weatherIcon={clearSunnySvgIcon} />
                 <HourlyForecastCard time="3 PM" temperature={20} weatherIcon={clearSunnySvgIcon} />
