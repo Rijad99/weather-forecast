@@ -36,13 +36,7 @@ export function CityWeatherOverview({ weatherForecast }: CityWeatherOverviewProp
 }
 
 function CityWeatherOverviewHeroImage() {
-    return (
-        <img
-            className="w-full h-full object-cover rounded-[var(--radius-24)]"
-            src={bgHeroImage}
-            alt="bg-hero-desktop-image"
-        />
-    );
+    return <img className="w-full h-full object-cover rounded-[var(--radius-24)]" src={bgHeroImage} alt="bg-hero-desktop-image" />;
 }
 
 interface CityWeatherOverviewContentProps {
@@ -54,7 +48,7 @@ interface CityWeatherOverviewContentProps {
 function CityWeatherOverviewContent({ city, country, date }: CityWeatherOverviewContentProps) {
     return (
         <div className="absolute flex justify-between items-center max-[1080px]:flex-col top-0 bottom-0 left-0 right-0 p-[var(--spacing-24)] max-[550px]:text-center max-[550px]:justify-center max-[550px]:gap-[var(--spacing-32)]">
-            <div className="text-center">
+            <div className="max-[1080px]:text-center">
                 <h1 className="text-(length:--fs-32) font-(weight:--fw-semi-bold) text-[var(--neutral-0)] max-[650px]:text-(length:--fs-24) max-[550px]:text-(length:--fs-20)">
                     {`${city}, ${country}`}
                 </h1>

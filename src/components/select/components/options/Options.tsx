@@ -14,13 +14,7 @@ function Options(props: OptionsProps) {
     const options = props.options.map((option, index) => {
         return (
             <div key={index} className="p-[var(--spacing-8)]">
-                <Option
-                    key={option.id}
-                    id={option.id}
-                    value={option.value}
-                    icon={option.icon}
-                    onOptionChange={() => handleOptionChange(option)}
-                />
+                <Option key={option.id} id={option.id} value={option.value} icon={option.icon} onOptionChange={() => handleOptionChange(option)} />
             </div>
         );
     });
@@ -33,22 +27,11 @@ function Options(props: OptionsProps) {
         return (
             <div key={i} className="px-[var(--spacing-8)]">
                 <div>
-                    <span className="font-(weight:--fw-bold) text-(length:--fs-12) text-[var(--neutral-300)] ml-[var(--spacing-6)]">
-                        {props.preSelectedOptions[key].divider}
-                    </span>
+                    <span className="font-(weight:--fw-bold) text-(length:--fs-12) text-[var(--neutral-300)] ml-[var(--spacing-6)]">{props.preSelectedOptions[key].divider}</span>
                     {props.preSelectedOptions[key].options.map((option) => {
-                        return (
-                            <Option
-                                key={option.id}
-                                id={option.id}
-                                value={option.value}
-                                preSelected={option.preSelected}
-                            />
-                        );
+                        return <Option key={option.id} id={option.id} value={option.value} preSelected={option.preSelected} />;
                     })}
-                    {i !== options.length + 1 ? (
-                        <div className="w-[95%] h-[1px] bg-[var(--neutral-600)] m-auto"></div>
-                    ) : null}
+                    {i !== options.length + 1 ? <div className="w-[95%] h-[1px] bg-[var(--neutral-600)] m-auto"></div> : null}
                 </div>
             </div>
         );

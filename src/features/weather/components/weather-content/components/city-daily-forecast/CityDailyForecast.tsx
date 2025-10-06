@@ -9,55 +9,13 @@ export function CityDailyForecast() {
         <div className="rounded-[var(--radius-24)] flex flex-col gap-y-[var(--spacing-12)]">
             <h1 className="text-[var(--neutral-0)] text-(length:--fs-20)">Daily Forecast</h1>
             <div className="grid grid-cols-[repeat(7,minmax(100px,1fr))] max-[1480px]:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-[var(--spacing-24)] h-full">
-                <DailyWeatherForecastCard
-                    day="Tue"
-                    highestTemperature="24"
-                    lowestTemperature="16"
-                    unit="°"
-                    icon={partlyCloudyIcon}
-                />
-                <DailyWeatherForecastCard
-                    day="Tue"
-                    highestTemperature="24"
-                    lowestTemperature="16"
-                    unit="°"
-                    icon={partlyCloudyIcon}
-                />
-                <DailyWeatherForecastCard
-                    day="Tue"
-                    highestTemperature="24"
-                    lowestTemperature="16"
-                    unit="°"
-                    icon={partlyCloudyIcon}
-                />
-                <DailyWeatherForecastCard
-                    day="Tue"
-                    highestTemperature="24"
-                    lowestTemperature="16"
-                    unit="°"
-                    icon={partlyCloudyIcon}
-                />
-                <DailyWeatherForecastCard
-                    day="Tue"
-                    highestTemperature="24"
-                    lowestTemperature="16"
-                    unit="°"
-                    icon={partlyCloudyIcon}
-                />
-                <DailyWeatherForecastCard
-                    day="Tue"
-                    highestTemperature="24"
-                    lowestTemperature="16"
-                    unit="°"
-                    icon={partlyCloudyIcon}
-                />
-                <DailyWeatherForecastCard
-                    day="Tue"
-                    highestTemperature="24"
-                    lowestTemperature="16"
-                    unit="°"
-                    icon={partlyCloudyIcon}
-                />
+                <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
+                <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
+                <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
+                <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
+                <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
+                <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
+                <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
             </div>
         </div>
     );
@@ -71,12 +29,7 @@ interface DailyWeatherForecastCardProps {
     icon?: string;
 }
 
-export function DailyWeatherForecastCard({
-    day,
-    highestTemperature,
-    lowestTemperature,
-    unit,
-}: DailyWeatherForecastCardProps) {
+export function DailyWeatherForecastCard({ day, highestTemperature, lowestTemperature, unit }: DailyWeatherForecastCardProps) {
     return (
         <Card additionalClasses="flex h-full items-center flex-col justify-between basis-1/4 flex-1 pl-[var(--spacing-16)] max-[550px]:h-auto">
             <span className="text-[var(--neutral-0)]">{day}</span>

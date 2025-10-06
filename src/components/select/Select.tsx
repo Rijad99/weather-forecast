@@ -8,15 +8,7 @@ import { SelectProps } from './Select.types';
 // Select hook
 import useSelectHook from './useSelectHook';
 
-function Select({
-    selectedOption,
-    placeholder,
-    options,
-    selectIcon,
-    preSelectedOptions,
-    additionalClasses,
-    onOptionChange,
-}: SelectProps) {
+function Select({ selectedOption, placeholder, options, selectIcon, preSelectedOptions, additionalClasses, onOptionChange }: SelectProps) {
     const { selectRef, isSelectOpen, handleSelectOpen, handleOptionChange } = useSelectHook(onOptionChange);
 
     return (
@@ -29,12 +21,7 @@ function Select({
                 placeholder={placeholder}
                 onSelectOpen={handleSelectOpen}
             />
-            <Options
-                isSelectOpen={isSelectOpen}
-                options={options}
-                preSelectedOptions={preSelectedOptions}
-                onOptionChange={handleOptionChange}
-            />
+            <Options isSelectOpen={isSelectOpen} options={options} preSelectedOptions={preSelectedOptions} onOptionChange={handleOptionChange} />
         </div>
     );
 }

@@ -11,14 +11,7 @@ import { SelectedOptionProps } from './SelectedOption.types';
 import Svg from '../../../svg/Svg';
 import { SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../svg/Svg.types';
 
-function SelectedOption({
-    selectedOption,
-    isSelectOpen,
-    placeholder,
-    selectIcon,
-    preSelectedOptions,
-    onSelectOpen,
-}: SelectedOptionProps) {
+function SelectedOption({ selectedOption, isSelectOpen, placeholder, selectIcon, preSelectedOptions, onSelectOpen }: SelectedOptionProps) {
     const handleSelectOpen = useCallback(() => {
         onSelectOpen();
     }, [onSelectOpen]);

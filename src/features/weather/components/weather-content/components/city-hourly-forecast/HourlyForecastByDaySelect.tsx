@@ -27,13 +27,5 @@ export function HourlyForecastByDaySelect() {
         setCurrentDay(day);
     };
 
-    return (
-        <Select
-            placeholder="Tuesday"
-            selectedOption={currentDay}
-            options={days}
-            onOptionChange={handleDayChange}
-            additionalClasses="w-[150px] bg-[var(--neutral-600)]"
-        />
-    );
+    return <Select placeholder="Tuesday" selectedOption={currentDay} options={days} onOptionChange={handleDayChange} additionalClasses="w-[150px] bg-[var(--neutral-600)]" />;
 }

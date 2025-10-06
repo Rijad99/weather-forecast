@@ -12,7 +12,9 @@ export function Search() {
     return (
         <div className="flex justify-center items-center gap-[var(--spacing-8)] max-[700px]:flex-col">
             <Input id="country-search" placeholder="Search for a place..." value={''} icon={searchIcon} additionalClasses="w-[50%] max-[700px]:w-full" />
-            <Button size={ButtonSize.LARGE} onClick={() => {}} additionalClasses="max-[700px]:w-full">Search</Button>
+            <Button size={ButtonSize.LARGE} onClick={() => {}} additionalClasses="max-[700px]:w-full">
+                Search
+            </Button>
         </div>
     );
 }

@@ -24,9 +24,7 @@ export function useDetermineLocationHook() {
             const { latitude, longitude } = await getCurrentLocation();
 
             try {
-                const res = await fetch(
-                    `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
-                );
+                const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`);
                 const locationData = await res.json();
 
                 setLocation(locationData);
