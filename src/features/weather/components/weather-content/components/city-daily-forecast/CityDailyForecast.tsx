@@ -3,8 +3,6 @@ import { DailyWeatherForecastCard } from './DailyWeatherForecastCard.tsx';
 
 // Icons
 import partlyCloudyIcon from '../../../../../../shared/icons/svgs/partly-cloudy.svg';
-
-// Tailwind Breakpoints
 import { breakpoints } from '../../../../../../styling/tailwind-config.ts';
 
 export function CityDailyForecast() {

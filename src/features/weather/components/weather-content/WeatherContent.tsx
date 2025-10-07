@@ -6,8 +6,6 @@ import { CityWeatherOverview } from './components/CityWeatherOverview.tsx';
 import { CityBaseWeatherInformation } from './components/city-base-weather-information/CityBaseWeatherInformation.tsx';
 import { CityDailyForecast } from './components/city-daily-forecast/CityDailyForecast.tsx';
 import { CityHourlyForecast } from './components/city-hourly-forecast/CityHourlyForecast.tsx';
-
-// Tailwind Breakpoints
 import { breakpoints } from '../../../../styling/tailwind-config.ts';
 
 interface WeatherContentProps {
