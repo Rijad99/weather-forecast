@@ -6,7 +6,7 @@ import Button from '../../../../components/button/Button.tsx';
 import { ButtonSize } from '../../../../components/button/Button.types.ts';
 
 // Icons
-import { searchIcon } from '../../../../icons/icons.ts';
+import { searchIcon } from '../../../../shared/icons/icons.ts';
 
 export function Search() {
     return (

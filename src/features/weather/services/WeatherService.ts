@@ -1,5 +1,5 @@
 // Utils
-import { getCurrentLocation } from '../../../common/user-location.ts';
+import { getCurrentLocation } from '../../../shared/utils/user-location.ts';
 
 const weatherForecastApiUrl = import.meta.env.VITE_WEATHER_FORECAST_API_KEY;
 

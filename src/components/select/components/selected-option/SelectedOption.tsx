@@ -2,7 +2,7 @@
 import { useCallback } from 'react';
 
 // Icons
-import { arrowIcon } from '../../../../icons/icons';
+import { arrowIcon } from '../../../../shared/icons/icons.ts';
 
 // Types
 import { SelectedOptionProps } from './SelectedOption.types';

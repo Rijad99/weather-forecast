@@ -2,7 +2,7 @@
 import Select from '../../../../../../components/select/Select';
 
 // Icons
-import { gearIcon } from '../../../../../../icons/icons.ts';
+import { gearIcon } from '../../../../../../shared/icons/icons.ts';
 
 // Hooks
 import { useUnitsSwitcherHook } from './useUnitsSwitcherHook.ts';

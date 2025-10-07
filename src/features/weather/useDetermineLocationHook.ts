@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 // Utils
-import { getCurrentLocation } from '../../common/user-location.ts';
+import { getCurrentLocation } from '../../shared/utils/user-location.ts';
 
 interface Location {
     address: {

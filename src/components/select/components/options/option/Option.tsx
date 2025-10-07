@@ -2,7 +2,7 @@
 import { OptionProps } from './Option.types';
 
 // Icons
-import { checkmarkIcon } from '../../../../../icons/icons';
+import { checkmarkIcon } from '../../../../../shared/icons/icons.ts';
 
 // Components
 import Svg from '../../../../svg/Svg';
