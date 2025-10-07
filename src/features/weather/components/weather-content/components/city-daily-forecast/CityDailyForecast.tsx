@@ -3,7 +3,6 @@ import { DailyWeatherForecastCard } from './DailyWeatherForecastCard.tsx';
 
 // Icons
 import partlyCloudyIcon from '../../../../../../shared/icons/svgs/partly-cloudy.svg';
-import { breakpoints } from '../../../../../../styling/tailwind-config.ts';
 
 export function CityDailyForecast() {
     return (
@@ -16,7 +15,7 @@ export function CityDailyForecast() {
 
 function CityDailyForecastList() {
     return (
-        <div className={`grid grid-cols-[repeat(7,minmax(100px,1fr))] ${breakpoints.max_1480}:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-[var(--spacing-24)] h-full`}>
+        <div className="grid grid-cols-[repeat(7,minmax(100px,1fr))] max-[1480px]:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-[var(--spacing-24)] h-full">
             <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
             <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />
             <DailyWeatherForecastCard day="Tue" highestTemperature="24" lowestTemperature="16" unit="°" icon={partlyCloudyIcon} />

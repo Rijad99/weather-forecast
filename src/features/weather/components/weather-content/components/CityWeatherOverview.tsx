@@ -13,9 +13,6 @@ import overcastIcon from '../../../../../shared/icons/svgs/overcast.svg';
 // Hooks
 import { useDetermineLocationHook } from '../../../useDetermineLocationHook.ts';
 
-// Tailwind Breakpoints
-import { breakpoints } from '../../../../../styling/tailwind-config.ts';
-
 interface CityWeatherOverviewProps {
     weatherForecast: WeatherForecastDataType | undefined;
 }
@@ -51,9 +48,7 @@ interface CityWeatherOverviewContentProps {
 
 function CityWeatherOverviewContent({ city, country, date }: CityWeatherOverviewContentProps) {
     return (
-        <div
-            className={`absolute flex justify-between items-center ${breakpoints.max_1080}:flex-col top-0 bottom-0 left-0 right-0 p-[var(--spacing-24)] ${breakpoints.max_550}:text-center ${breakpoints.max_550}:justify-center ${breakpoints.max_550}:gap-[var(--spacing-32)]`}
-        >
+        <div className="absolute flex justify-between items-center max-[1080px]:flex-col top-0 bottom-0 left-0 right-0 p-[var(--spacing-24)] max-[550px]:text-center max-[550px]:justify-center max-[550px]:gap-[var(--spacing-32)]">
             <LocationAndDate city={city} country={country} date={date} />
             <CurrentTemperature icon={overcastIcon} temperature={'20°'} />
         </div>
@@ -68,11 +63,9 @@ interface LocationAndDateProps {
 
 function LocationAndDate({ city, country, date }: LocationAndDateProps) {
     return (
-        <div className={`${breakpoints.max_1000}:text-center`}>
-            <h1
-                className={`text-(length:--fs-32) font-(weight:--fw-semi-bold) text-[var(--neutral-0)] ${breakpoints.max_650}:text-(length:--fs-24) ${breakpoints.max_650}:text-(length:--fs-20)`}
-            >{`${city}, ${country}`}</h1>
-            <span className={`text-[var(--neutral-0)] ${breakpoints.max_550}:text-(length:--fs-14)`}>{date}</span>
+        <div className="max-[1080px]:text-center">
+            <h1 className="text-(length:--fs-32) font-(weight:--fw-semi-bold) text-[var(--neutral-0)] max-[650px]:text-(length:--fs-24) max-[550px]:text-(length:--fs-20)">{`${city}, ${country}`}</h1>
+            <span className="text-[var(--neutral-0)] max-[550px]:text-(length:--fs-14)">{date}</span>
         </div>
     );
 }
@@ -85,8 +78,8 @@ interface CurrentTemperatureProps {
 function CurrentTemperature({ icon, temperature }: CurrentTemperatureProps) {
     return (
         <div className="flex items-center gap-[var(--spacing-24)]">
-            <img className={`w-[96px] ${breakpoints.max_1000}:w-[66px]`} src={icon} alt={'current-weather-icon'} />
-            <span className={`text-(length:--fs-96) text-[var(--neutral-0)] ${breakpoints.max_1000}:text-(length:--fs-52)`}>{temperature}</span>
+            <img className="w-[96px] max-[1000px]:w-[66px]" src={icon} alt={'current-weather-icon'} />
+            <span className="text-(length:--fs-96) text-[var(--neutral-0)] max-[1000px]:text-(length:--fs-52)">{temperature}</span>
         </div>
     );
 }
