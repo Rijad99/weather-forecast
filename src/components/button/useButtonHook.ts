@@ -1,12 +1,13 @@
 // Types
-import { ButtonSize } from './Button.types.ts';
+import { ButtonSize, ButtonType } from './Button.types.ts';
 
 // CSS
 import { useCallback } from 'react';
 
 function useButtonHook() {
-    const getButtonCSS = useCallback((size: ButtonSize) => {
+    const getButtonCSS = useCallback((size: ButtonSize, type: ButtonType) => {
         let buttonSize = '';
+        let buttonType = '';
 
         switch (size) {
             case 'SMALL':
@@ -20,7 +21,16 @@ function useButtonHook() {
                 break;
         }
 
-        return buttonSize;
+        switch (type) {
+            case 'PRIMARY':
+                buttonType = 'bg-[var(--blue-500)]';
+                break;
+            case 'SECONDARY':
+                buttonType = 'bg-[var(--neutral-700)]';
+                break;
+        }
+
+        return `${buttonSize} ${buttonType}`;
     }, []);
 
     return { getButtonCSS };

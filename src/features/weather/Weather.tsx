@@ -2,7 +2,7 @@ import { WeatherLayout } from './components/weather-layout/WeatherLayout';
 import { useWeatherHook } from './useWeatherHook.tsx';
 
 export function Weather() {
-    const { weatherForecastData } = useWeatherHook();
+    const { weatherForecastData, isWeatherForecastError } = useWeatherHook();
 
-    return <WeatherLayout weatherForecast={weatherForecastData} />;
+    return <WeatherLayout weatherForecastData={weatherForecastData} isWeatherForecastError={isWeatherForecastError} />;
 }
