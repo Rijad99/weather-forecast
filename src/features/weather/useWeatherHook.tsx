@@ -20,7 +20,7 @@ export function useWeatherHook() {
     return {
         ...weatherForecast,
         weatherForecastData: weatherForecast.data,
-        isWeatherForecastLoading: weatherForecast.isLoading,
+        isWeatherForecastFetching: weatherForecast.isFetching,
         isWeatherForecastError: weatherForecast.isError,
     };
 }

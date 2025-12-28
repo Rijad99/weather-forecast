@@ -20,7 +20,7 @@ export function WeatherContent({ weatherForecast }: WeatherContentProps) {
                 <CityDailyForecast />
             </div>
 
-            <CityHourlyForecast />
+            <CityHourlyForecast weatherForecast={weatherForecast} />
         </div>
     );
 }

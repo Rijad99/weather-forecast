@@ -1,7 +1,7 @@
 const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-export function getCurrentDate(): string {
+export function getCurrentDate() {
     const currentDate: Date = new Date();
     const dayName: string = days[currentDate.getDay()];
     const monthName: string = months[currentDate.getMonth()];
@@ -9,4 +9,14 @@ export function getCurrentDate(): string {
     const year: number = currentDate.getFullYear();
 
     return `${dayName}, ${monthName} ${date}, ${year}`;
+}
+
+export function apiFormatOfDate() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+    const day = currentDate.getDate();
+    const hour = currentDate.getHours();
+
+    return `${year}-${month}-${day}T${hour}:00`;
 }

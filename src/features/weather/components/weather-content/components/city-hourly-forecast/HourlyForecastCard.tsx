@@ -2,31 +2,31 @@
 import { Card } from '../../../../../../components/card/Card.tsx';
 
 interface HourlyForecastCardProps {
-    time: string;
+    hour: string;
     temperature: number;
     weatherIcon: string;
 }
 
-export function HourlyForecastCard({ time, temperature, weatherIcon }: HourlyForecastCardProps) {
+export function HourlyForecastCard({ hour, temperature, weatherIcon }: HourlyForecastCardProps) {
     return (
         <Card additionalClasses="flex justify-between items-center">
-            <HourlyForecastCardContent time={time} temperature={temperature} weatherIcon={weatherIcon} />
+            <HourlyForecastCardContent hour={hour} temperature={temperature} weatherIcon={weatherIcon} />
         </Card>
     );
 }
 
 interface HourlyForecastCardContentProps {
-    time: string;
+    hour: string;
     temperature: number;
     weatherIcon: string;
 }
 
-function HourlyForecastCardContent({ time, temperature, weatherIcon }: HourlyForecastCardContentProps) {
+function HourlyForecastCardContent({ hour, temperature, weatherIcon }: HourlyForecastCardContentProps) {
     return (
         <>
             <div className="flex items-center">
                 <img src={weatherIcon} className="w-[48px]" alt={'hourly-weather-icon'} />
-                <span className="text-[var(--neutral-0)]">{time}</span>
+                <span className="text-[var(--neutral-0)]">{hour}</span>
             </div>
             <span className="text-[var(--neutral-0)]">{temperature}°</span>
         </>
