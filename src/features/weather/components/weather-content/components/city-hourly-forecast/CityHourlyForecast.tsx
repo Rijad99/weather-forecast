@@ -5,6 +5,7 @@ import clearSunnySvgIcon from '../../../../../../shared/icons/svgs/clear-sunny.s
 import { HourlyForecastByDaySelect } from './HourlyForecastByDaySelect.tsx';
 import { HourlyForecastCard } from './HourlyForecastCard.tsx';
 import { WeatherForecastDataType } from '../../../../types/WeatherTypes.ts';
+import { apiFormatOfDate } from '../../../../../../shared/utils/date-utils.ts';
 
 interface CityHourlyForecastProps {
     weatherForecast: WeatherForecastDataType | undefined;
@@ -29,8 +30,9 @@ interface CityHourlyForecastListProps {
 function CityHourlyForecastList({ weatherForecast }: CityHourlyForecastListProps) {
     const NUMBER_OF_HOURLY_TEMPERATURES = 10;
 
-    const times = weatherForecast!.hourly.time.slice(0, NUMBER_OF_HOURLY_TEMPERATURES);
-    const temperatures = weatherForecast!.hourly.temperature_2m.slice(0, NUMBER_OF_HOURLY_TEMPERATURES);
+    const indexOfCurrentHour = weatherForecast!.hourly.time.indexOf(apiFormatOfDate());
+    const times = weatherForecast!.hourly.time.slice(indexOfCurrentHour, (indexOfCurrentHour + NUMBER_OF_HOURLY_TEMPERATURES));
+    const temperatures = weatherForecast!.hourly.temperature_2m.slice(indexOfCurrentHour, (indexOfCurrentHour + NUMBER_OF_HOURLY_TEMPERATURES));
 
     return (
         <div className="flex flex-col gap-[var(--spacing-16)] max-h-[550px] overflow-x-hidden overflow-y-auto pr-[var(--spacing-24)]">
