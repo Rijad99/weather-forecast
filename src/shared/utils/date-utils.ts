@@ -16,7 +16,7 @@ export function apiFormatOfDate() {
 
     const year = currentDate.getFullYear();
     const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0');
-    const day = String(currentDate.getDate() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
     const hour = currentDate.getHours();
 
     return `${year}-${month}-${day}T${hour}:00`;
