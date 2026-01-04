@@ -29,6 +29,11 @@ export function CityWeatherOverview({ weatherForecast }: CityWeatherOverviewProp
     const currentTemperature = Math.round(weatherForecast!.hourly.temperature_2m[indexOfCurrentHour]).toString();
     const hourlyUnits = weatherForecast!.hourly_units.temperature_2m;
 
+    console.log('Weather Forecast: ', weatherForecast);
+
+    console.log('Index of current hour: ', indexOfCurrentHour);
+    console.log('Current Temperature: ', currentTemperature);
+
     return (
         <div className="relative">
             <CityWeatherOverviewHeroImage />
